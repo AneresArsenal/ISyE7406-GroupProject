@@ -32,7 +32,7 @@ def runKNN(df):
 
 
 def main():
-    df = pd.read_csv("./data/journeys.csv", index_col='id', parse_dates=True, na_values=['nan']) 
+    df = pd.read_csv("./data/journeys-serena.csv", index_col='id', parse_dates=True, na_values=['nan']) 
 
     # dimensions
     print(df.shape)

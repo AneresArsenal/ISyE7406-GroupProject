@@ -14,7 +14,7 @@ from IPython import display
 def main():
     plt.style.use("ggplot")
 
-    raw = pd.read_csv("./data/journeys.csv", index_col='id', parse_dates=True, na_values=['nan']) 
+    raw = pd.read_csv("./data/journeys-serena.csv", index_col='id', parse_dates=True, na_values=['nan']) 
 
     df = raw[['age', 'language', 'journey', 'touchpoint','duration', 'conversion','email', 'facebook', 'house_ads', 'instagram', 'push']]
 
