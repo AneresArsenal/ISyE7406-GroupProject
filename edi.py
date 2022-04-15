@@ -35,34 +35,34 @@ def main():
     df = pd.read_csv("./data/journeys.csv", index_col='id', parse_dates=True, na_values=['nan']) 
 
     # dimensions
-    # print(df.shape)
-    # print(df.columns.values);
+    print(df.shape)
+    print(df.columns.values);
 
 
-    # # correlation matrix
-    # corr = df[['age', 'language', 'journey', 'touchpoint','duration', 'conversion','email', 'facebook', 'house_ads', 'instagram', 'push']]
-    # nominal.associations(corr,figsize=(10,10),mark_columns=False, filename='correlationMatrix.jpg');
+    # correlation matrix
+    corr = df[['age', 'language', 'journey', 'touchpoint','duration', 'conversion','email', 'facebook', 'house_ads', 'instagram', 'push']]
+    nominal.associations(corr,figsize=(10,10),mark_columns=False, filename='correlationMatrix.jpg');
 
-    # # EDI
-    # for each in corr.columns.values:
-    #     unique = corr[each].unique()
-    #     print(sorted(unique))
+    # EDI
+    for each in corr.columns.values:
+        unique = corr[each].unique()
+        print(sorted(unique))
 
 
-    # # Histograms
-    # fig = px.bar(df["age"].value_counts(), title="Age of users")
-    # fig.update_layout(
-    #     xaxis_title = "Age Group",
-    #     yaxis_title = "Frequency",
-    #     title_x = 0.5,
-    #     showlegend = False
-    # )
+    # Histograms
+    fig = px.bar(df["age"].value_counts(), title="Age of users")
+    fig.update_layout(
+        xaxis_title = "Age Group",
+        yaxis_title = "Frequency",
+        title_x = 0.5,
+        showlegend = False
+    )
 
-    # fig.write_image("age_group_users_histogram.jpg")
-    # plotly.offline.plot(fig, filename='age_group_users_histogram.html')
+    fig.write_image("age_group_users_histogram.jpg")
+    plotly.offline.plot(fig, filename='age_group_users_histogram.html')
 
-    # ax = df['conversion'].astype(int).hist(bins=2, figsize=(12,8), color='#86bf91')
-    # plt.savefig('conversion_histogram.jpg')
+    ax = df['conversion'].astype(int).hist(bins=2, figsize=(12,8), color='#86bf91')
+    plt.savefig('conversion_histogram.jpg')
 
 
 

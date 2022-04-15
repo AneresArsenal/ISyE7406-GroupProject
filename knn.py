@@ -83,12 +83,6 @@ def main():
     print(confusion_matrix(y_test, y_pred))
     print(report)
 
-    ## SHAP
-    # X_train, X_test, y_train, y_test = train_test_split(df,labels, test_size=0.03, random_state=123)
-    # explainer = shap.KernelExplainer(grid.predict, X_test)
-    # shap_values = explainer.shap_values(X_test)
-    # shap.summary_plot(shap_values, X_test)
-
 
     FP = X_test[(y_test == 0) & (y_pred == 1)]
     print(FP)
